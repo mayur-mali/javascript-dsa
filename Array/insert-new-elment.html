@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion In Array</title>
+</head>
+
+<body>
+    <div style="font-size: 20px;" id="root"></div>
+    <input type="text" id="position" placeholder="enter element position">
+    <input type="text" id="element" placeholder="enter element..">
+    <button onclick="insertElement()">
+        insert Element
+    </button>
+    <script>
+        let root = document.getElementById("root");
+
+        // traversing array
+        let data = [10, 47, 96, 37, 45, 36];
+
+        // method I manually
+        // let position = 3;
+        // let element = 100;
+        // for (let i = data.length - 1; i >= 0; i--) {
+
+        //     if (i >= position) {
+        //         data[i + 1] = data[i];
+        //         if (i == position) {
+        //             data[i] = element;
+        //         }
+        //     }
+
+        // }
+        // console.log(data);
+
+
+        // function for insert new element in array 
+
+        function insertElement() {
+            position = document.getElementById("position").value;
+            el = document.getElementById("element").value;
+            position = parseInt(position);
+            el = parseInt(el)
+            for (let i = data.length - 1; i >= 0; i--) {
+                if (i >= position) {
+                    data[i + 1] = data[i];
+                    if (i == position) {
+                        data[i] = el;
+                    }
+                }
+            }
+            // console.log(data);
+            root.innerHTML = `modifyed array ${data}`;
+        }
+        root.innerHTML = data;
+    </script>
+</body>
+
+</html>
